@@ -6,6 +6,18 @@
 // beginning with 'on' to denote that it is done when the GET /books
 // button is clicked
 
-module.exports = {
+const api = require('./api');
+const ui = require('./ui');
 
+const onGetBooks = function (event) {
+  event.preventDefault();
+
+  api.index()
+  .then(ui.onSuccess)
+  .catch(ui.onError)
+  ;
+};
+
+module.exports = {
+  onGetBooks,
 };

@@ -11,4 +11,10 @@ $(() => {
 // const example = require('./example');
 
 // use require without a reference to ensure a file is bundled
-require('./example');
+// require('./example');
+
+const booksEvents = require('./books/events');
+
+$(() => {
+  $('#books-index').on('submit', booksEvents.onGetBooks);
+});
